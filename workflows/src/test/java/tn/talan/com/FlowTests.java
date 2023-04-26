@@ -1,8 +1,6 @@
 package tn.talan.com;
 
 import com.google.common.collect.ImmutableList;
-import tn.talan.com.flows.TemplateFlow;
-import tn.talan.com.states.TemplateState;
 import net.corda.core.identity.CordaX500Name;
 import net.corda.core.node.services.Vault;
 import net.corda.core.node.services.vault.QueryCriteria;
@@ -42,8 +40,8 @@ public class FlowTests {
         network.runNetwork();
 
         //successful query means the state is stored at node b's vault. Flow went through.
-        QueryCriteria inputCriteria = new QueryCriteria.VaultQueryCriteria().withStatus(Vault.StateStatus.UNCONSUMED);
-        TemplateState state = b.getServices().getVaultService().queryBy(TemplateState.class,inputCriteria)
+        QueryCriteria.VaultQueryCriteria inputCriteria = new QueryCriteria.VaultQueryCriteria().withStatus(Vault.StateStatus.UNCONSUMED);
+        TemplateState state = b.getServices().getVaultService().queryBy(TemplateState.class)
                 .getStates().get(0).getState().getData();
     }
 }
