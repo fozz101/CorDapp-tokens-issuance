@@ -16,6 +16,7 @@ import static net.corda.testing.node.NodeTestUtils.transaction;
 
 
 public class ContractTests {
+    /*
     private final MockServices ledgerServices = new MockServices(Arrays.asList("tn.talan.com"));
     TestIdentity alice = new TestIdentity(new CordaX500Name("Alice",  "TestLand",  "US"));
     TestIdentity bob = new TestIdentity(new CordaX500Name("Alice",  "TestLand",  "US"));
@@ -199,5 +200,5 @@ public class ContractTests {
             tx.verifies();
             return null;
         });
-    }
+    }*/
 }

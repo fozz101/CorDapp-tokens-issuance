@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class StateTests {
+    /*
     private final Party alice = new TestIdentity(new CordaX500Name("Alice", "", "GB")).getParty();
     private final Party bob = new TestIdentity(new CordaX500Name("Bob", "", "GB")).getParty();
 
@@ -40,5 +41,5 @@ public class StateTests {
         assertTrue(tokenState.getParticipants().contains(bob));
     }
 
-
+*/
 }

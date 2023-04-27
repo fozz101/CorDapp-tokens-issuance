@@ -36,8 +36,11 @@ public class TokenIssueFlow {
         }
 
 
+
+        @Suspendable
         @Override
         public SignedTransaction call() throws FlowException {
+
             //select notary node
             final Party notary = getServiceHub().getNetworkMapCache().getNotary(CordaX500Name.parse("O=Notary,L=London,C=GB"));
             Party issuer = getOurIdentity();

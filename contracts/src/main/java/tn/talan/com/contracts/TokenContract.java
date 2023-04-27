@@ -2,6 +2,7 @@ package tn.talan.com.contracts;
 
 import net.corda.core.contracts.CommandData;
 import net.corda.core.contracts.Contract;
+import net.corda.core.identity.CordaX500Name;
 import net.corda.core.transactions.LedgerTransaction;
 import org.jetbrains.annotations.NotNull;
 import tn.talan.com.states.TokenState;
@@ -47,7 +48,13 @@ public class TokenContract implements Contract {
             throw new IllegalArgumentException("Token Contract requires issuer is a signer!");
         }
 
-
+        // notary shouldn't be an owner or issuer
+        if(tokenState.getIssuer().equals(tx.getNotary())){
+            throw new IllegalArgumentException("Token Contract requires Notary is not issuer");
+        }
+        if(tokenState.getOwner().equals(tx.getNotary())){
+            throw new IllegalArgumentException("Token Contract requires Notary is not owner");
+        }
 
     }
 
