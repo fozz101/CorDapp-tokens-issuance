@@ -1,9 +1,11 @@
 package tn.talan.com.states;
 
+import net.corda.core.contracts.BelongsToContract;
 import net.corda.core.contracts.ContractState;
 import net.corda.core.identity.AbstractParty;
 import net.corda.core.identity.Party;
 import org.jetbrains.annotations.NotNull;
+import tn.talan.com.contracts.TokenContract;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +13,7 @@ import java.util.List;
 /**
  * @author fozz101
  */
+@BelongsToContract(TokenContract.class)
 public class TokenState implements ContractState {
     private final Party issuer;
     private final Party owner;
